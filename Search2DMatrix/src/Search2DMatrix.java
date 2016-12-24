@@ -52,6 +52,14 @@ public class Search2DMatrix {
 	 * 
 	 * @param number - the number to search for
 	 * @return	- true is the number is in the matrix; false, otherwise
+	 * 
+	 * [TODO]
+	 * It didn't search all four quadrants, except the worst case. Once it finds the number, it returns without searching the remainder quadrants. 
+	 * I think I can improve this approach a little bit with the following logic added: 
+	 * comparing the middle number at each recursive call against the target number: 
+	 * 		1. equal: return true;
+	 * 		2. less than the target number: search only two top quadrants: top left and top right;
+	 * 		3. greater than the target number: search only two bottom quadrant, including the current row to its right.
 	 */
 	public boolean isInMatrix(int number) {
 		if (this.matrix == null) {
